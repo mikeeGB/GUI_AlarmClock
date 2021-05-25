@@ -4,10 +4,10 @@ from pygame import mixer
 from random import randint
 
 
-# Функции будильника
+# Alarmclock functions
 def clock():
     """
-    обновляет текущее время в окне tkinter
+    Updates current time
     """
     current_time = datetime.now().strftime("%H:%M:%S")
     myTimeLabel.config(text=current_time, font='Banschrift 30')
@@ -16,7 +16,7 @@ def clock():
 
 def play_music():
     """
-    Включает музыку
+    Opens and Plays music
     """
     mixer.music.load("music/basic.wav")
     mixer.music.play()
@@ -24,10 +24,10 @@ def play_music():
 
 def start_alarm():
     """
-    Запускает будильник, если оставшееся время равно 0
+    Launch alarm if no time left
     """
     try:
-        hours_inp = int(hours_item.get())  # получаем информацию из spin box
+        hours_inp = int(hours_item.get())  # get info from spinbox
         assert hours_inp in range(0, 24)
         minutes_inp = int(minutes_item.get())
         assert minutes_inp in range(0, 60)
